@@ -140,57 +140,93 @@
     letter-spacing: 0.5px;
   }
 
-  /* Sticky nav */
+  /* Sticky nav — two-level */
   html { scroll-behavior: smooth; }
   .section-nav {
     position: sticky;
     top: 0;
     z-index: 150;
-    background: rgba(11,26,51,0.92);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(46,117,247,0.1);
+    background: var(--dark-card);
+    border-bottom: 2px solid var(--color-blue);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
   }
-  .section-nav-inner {
+  /* Level 1 — category row */
+  .nav-level-1 {
+    background: var(--dark-card-alt);
+    border-bottom: 1px solid rgba(46,117,247,0.15);
+  }
+  .nav-level-1-inner {
     max-width: 860px;
     margin: 0 auto;
     display: flex;
+    padding: 0 40px;
+  }
+  .nav-level-1 a {
+    display: block;
+    padding: 10px 16px;
+    text-decoration: none;
+    color: var(--text-muted);
+    font-family: var(--font-display);
+    font-size: 10px;
+    font-weight: 800;
+    white-space: nowrap;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s, border-color 0.2s, background 0.2s;
+  }
+  .nav-level-1 a:hover { color: var(--color-white); background: rgba(46,117,247,0.08); }
+  .nav-level-1 a.active {
+    color: var(--color-white);
+    background: rgba(46,117,247,0.12);
+    border-bottom-color: var(--color-blue);
+  }
+  /* Level 2 — section row */
+  .nav-level-2 {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
   }
-  .section-nav-inner::-webkit-scrollbar { display: none; }
-  .section-nav a {
+  .nav-level-2::-webkit-scrollbar { display: none; }
+  .nav-level-2-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    display: flex;
+    padding: 0 40px;
+  }
+  .nav-level-2 a {
     display: flex;
     align-items: center;
-    gap: 4px;
-    padding: 12px 14px;
+    gap: 5px;
+    padding: 9px 14px;
     text-decoration: none;
     color: var(--text-muted);
     font-family: var(--font-display);
     font-size: 10px;
     font-weight: 700;
     white-space: nowrap;
-    letter-spacing: 1.5px;
+    letter-spacing: 1px;
     text-transform: uppercase;
-    border-bottom: 2px solid transparent;
-    transition: color 0.2s, border-color 0.2s;
+    transition: color 0.2s, background 0.2s;
+    border-radius: 4px;
+    margin: 4px 0;
   }
-  .section-nav a:hover { color: var(--text-primary); }
-  .section-nav a.active {
-    color: var(--color-blue);
-    border-bottom-color: var(--color-blue);
+  .nav-level-2 a:hover { color: var(--text-primary); background: rgba(255,255,255,0.05); }
+  .nav-level-2 a.active {
+    color: var(--color-white);
+    background: var(--color-blue);
   }
-  .section-nav a .nav-num {
-    color: var(--color-blue);
+  .nav-level-2 a .nav-num {
     font-weight: 800;
+    opacity: 0.7;
   }
+  .nav-level-2 a.active .nav-num { opacity: 1; }
 
   /* Sections */
   section {
     padding: 52px 0;
     border-bottom: 1px solid rgba(46,117,247,0.1);
-    scroll-margin-top: 48px;
+    scroll-margin-top: 80px;
   }
   section:last-child { border-bottom: none; }
 
@@ -635,22 +671,33 @@
   </div>
 </div>
 
-<!-- Sticky section nav -->
+<!-- Sticky section nav — two level -->
 <nav class="section-nav" id="sectionNav">
-  <div class="section-nav-inner">
-    <a href="#s01"><span class="nav-num">01</span> Why</a>
-    <a href="#s02"><span class="nav-num">02</span> Intern</a>
-    <a href="#s03"><span class="nav-num">03</span> Org</a>
-    <a href="#s04"><span class="nav-num">04</span> Roles</a>
-    <a href="#s05"><span class="nav-num">05</span> Rhythm</a>
-    <a href="#s06"><span class="nav-num">06</span> Authority</a>
-    <a href="#s07"><span class="nav-num">07</span> Quals</a>
-    <a href="#s08"><span class="nav-num">08</span> Market</a>
-    <a href="#s09"><span class="nav-num">09</span> Comp</a>
-    <a href="#s10"><span class="nav-num">10</span> KPIs</a>
-    <a href="#s11"><span class="nav-num">11</span> Growth</a>
-    <a href="#s12"><span class="nav-num">12</span> JD</a>
-    <a href="#s13"><span class="nav-num">13</span> Sources</a>
+  <div class="nav-level-1">
+    <div class="nav-level-1-inner">
+      <a href="#s01" data-group="strategy">Strategy</a>
+      <a href="#s03" data-group="role">Role Definition</a>
+      <a href="#s07" data-group="comp">Compensation</a>
+      <a href="#s10" data-group="metrics">Metrics &amp; Growth</a>
+      <a href="#s12" data-group="posting">Job Posting</a>
+    </div>
+  </div>
+  <div class="nav-level-2">
+    <div class="nav-level-2-inner" id="navLevel2">
+      <a href="#s01" data-group="strategy"><span class="nav-num">01</span> Why</a>
+      <a href="#s02" data-group="strategy"><span class="nav-num">02</span> Intern</a>
+      <a href="#s03" data-group="role"><span class="nav-num">03</span> Org</a>
+      <a href="#s04" data-group="role"><span class="nav-num">04</span> Roles</a>
+      <a href="#s05" data-group="role"><span class="nav-num">05</span> Rhythm</a>
+      <a href="#s06" data-group="role"><span class="nav-num">06</span> Authority</a>
+      <a href="#s07" data-group="comp"><span class="nav-num">07</span> Quals</a>
+      <a href="#s08" data-group="comp"><span class="nav-num">08</span> Market Data</a>
+      <a href="#s09" data-group="comp"><span class="nav-num">09</span> Recommendation</a>
+      <a href="#s10" data-group="metrics"><span class="nav-num">10</span> 90-Day KPIs</a>
+      <a href="#s11" data-group="metrics"><span class="nav-num">11</span> Growth Path</a>
+      <a href="#s12" data-group="posting"><span class="nav-num">12</span> Job Description</a>
+      <a href="#s13" data-group="posting"><span class="nav-num">13</span> Sources</a>
+    </div>
   </div>
 </nav>
 
@@ -1358,31 +1405,34 @@
 
 <script>
 (function() {
-  const nav = document.getElementById('sectionNav');
-  const links = nav.querySelectorAll('a');
-  const sections = [];
-  links.forEach(function(a) {
+  var level2 = document.getElementById('navLevel2');
+  var l2Links = level2.querySelectorAll('a');
+  var l1Links = document.querySelectorAll('.nav-level-1 a');
+  var sections = [];
+  l2Links.forEach(function(a) {
     var id = a.getAttribute('href').slice(1);
     var el = document.getElementById(id);
-    if (el) sections.push({ id: id, el: el, link: a });
+    if (el) sections.push({ id: id, el: el, link: a, group: a.dataset.group });
   });
   function update() {
-    var scrollY = window.scrollY + 80;
+    var scrollY = window.scrollY + 100;
     var current = '';
+    var currentGroup = '';
     sections.forEach(function(s) {
-      if (s.el.offsetTop <= scrollY) current = s.id;
+      if (s.el.offsetTop <= scrollY) { current = s.id; currentGroup = s.group; }
     });
-    links.forEach(function(a) {
+    l2Links.forEach(function(a) {
       a.classList.toggle('active', a.getAttribute('href') === '#' + current);
     });
-    // scroll active link into view in nav
-    var activeLink = nav.querySelector('a.active');
+    l1Links.forEach(function(a) {
+      a.classList.toggle('active', a.dataset.group === currentGroup);
+    });
+    var activeLink = level2.querySelector('a.active');
     if (activeLink) {
-      var navInner = nav.querySelector('.section-nav-inner');
-      var linkLeft = activeLink.offsetLeft - navInner.offsetLeft;
+      var linkLeft = activeLink.offsetLeft - level2.offsetLeft;
       var linkCenter = linkLeft + activeLink.offsetWidth / 2;
-      var navCenter = navInner.clientWidth / 2;
-      navInner.scrollTo({ left: linkCenter - navCenter, behavior: 'smooth' });
+      var navCenter = level2.clientWidth / 2;
+      level2.scrollTo({ left: linkCenter - navCenter, behavior: 'smooth' });
     }
   }
   window.addEventListener('scroll', update, { passive: true });
