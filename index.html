@@ -1,0 +1,1273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marketing Coordinator Role Package — Lake Erie Golf Cars + Versatile</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    /* Surfaces (lightest to darkest) */
+    --dark-bg: #0B1A33;
+    --dark-surface: #0D1F3C;
+    --dark-card: #0F2340;
+    --dark-card-alt: #132D55;
+    --dark-elevated: #1A3566;
+
+    /* Brand */
+    --color-blue: #2E75F7;
+    --color-blue-glow: rgba(46,117,247,0.2);
+    --color-blue-border: rgba(46,117,247,0.3);
+    --color-blue-subtle: rgba(46,117,247,0.12);
+    --color-white: #FFFFFF;
+
+    /* Text on dark */
+    --text-primary: rgba(255,255,255,0.92);
+    --text-secondary: rgba(255,255,255,0.7);
+    --text-muted: rgba(255,255,255,0.45);
+    --text-faint: rgba(255,255,255,0.25);
+
+    /* Accent */
+    --color-green: #4ADE80;
+    --color-amber: #FBBF24;
+    --color-red: #F87171;
+
+    /* Typography */
+    --font-display: 'Nunito Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: var(--font-body);
+    color: var(--text-secondary);
+    background: var(--dark-bg);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .page {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  /* Brand mark — top right */
+  .brand-mark {
+    position: fixed;
+    top: 20px;
+    right: 24px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    z-index: 100;
+  }
+  .brand-mark-text {
+    font-family: var(--font-display);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+  }
+  .brand-mark-bar {
+    width: 3px;
+    height: 16px;
+    background: var(--color-blue);
+    border-radius: 2px;
+  }
+
+  /* Cover */
+  .cover {
+    background: var(--dark-surface);
+    padding: 100px 40px 72px;
+    border-bottom: 3px solid var(--color-blue);
+  }
+  .cover .page { padding: 0; }
+  .cover-label {
+    font-family: var(--font-display);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--color-blue);
+    margin-bottom: 20px;
+  }
+  .cover h1 {
+    font-family: var(--font-display);
+    font-size: 44px;
+    font-weight: 800;
+    line-height: 1.1;
+    color: var(--color-white);
+    margin-bottom: 16px;
+  }
+  .cover-sub {
+    font-size: 16px;
+    color: var(--text-secondary);
+    margin-bottom: 40px;
+    max-width: 640px;
+    line-height: 1.7;
+  }
+  .cover-meta {
+    display: flex;
+    gap: 32px;
+    font-size: 12px;
+    color: var(--text-muted);
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+
+  /* Sections */
+  section {
+    padding: 52px 0;
+    border-bottom: 1px solid rgba(46,117,247,0.1);
+  }
+  section:last-child { border-bottom: none; }
+
+  .section-header {
+    background: var(--dark-surface);
+    margin: 0 -40px;
+    padding: 20px 40px;
+    margin-bottom: 28px;
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+  }
+  .section-num {
+    font-family: var(--font-display);
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--color-blue);
+  }
+  .section-title {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--color-white);
+  }
+
+  h3 {
+    font-family: var(--font-display);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--color-white);
+    margin: 28px 0 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  p {
+    color: var(--text-secondary);
+    margin-bottom: 16px;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  /* Cards */
+  .card {
+    background: var(--dark-card);
+    border: 1px solid var(--color-blue-border);
+    border-radius: 9px;
+    padding: 20px 24px;
+    margin: 20px 0;
+  }
+  .card-highlight {
+    border-left: 3px solid var(--color-blue);
+  }
+  .card-green {
+    border-left: 3px solid var(--color-green);
+  }
+  .card-amber {
+    border-left: 3px solid var(--color-amber);
+  }
+  .card p { margin-bottom: 0; font-size: 13px; }
+  .card strong { color: var(--color-white); }
+  .card-label {
+    font-family: var(--font-display);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--color-blue);
+    margin-bottom: 8px;
+  }
+
+  /* Lists */
+  ul, ol {
+    padding-left: 20px;
+    margin-bottom: 16px;
+    list-style: none;
+  }
+  li {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: 10px;
+    line-height: 1.6;
+    position: relative;
+    padding-left: 14px;
+  }
+  li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 9px;
+    width: 5px;
+    height: 5px;
+    background: var(--color-blue);
+    border-radius: 50%;
+  }
+  li strong { color: var(--color-white); }
+
+  /* Tables */
+  table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 20px 0;
+    font-size: 13px;
+    border-radius: 9px;
+    overflow: hidden;
+  }
+  th {
+    text-align: left;
+    padding: 12px 16px;
+    background: var(--dark-card-alt);
+    color: var(--text-secondary);
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  td {
+    padding: 12px 16px;
+    background: var(--dark-card);
+    border-bottom: 1px solid rgba(46,117,247,0.1);
+    color: var(--text-secondary);
+    font-size: 13px;
+  }
+  td strong { color: var(--text-primary); }
+
+  /* Responsibility grid */
+  .resp-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 24px 0;
+  }
+  .resp-card {
+    background: var(--dark-card);
+    border: 1px solid var(--color-blue-border);
+    border-radius: 9px;
+    padding: 24px;
+  }
+  .resp-card h4 {
+    font-family: var(--font-display);
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--color-white);
+    margin-bottom: 4px;
+  }
+  .resp-card .pct {
+    font-family: var(--font-display);
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--color-blue);
+    margin-bottom: 4px;
+  }
+  .resp-card .season-note {
+    font-size: 11px;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-bottom: 14px;
+  }
+  .resp-card ul { padding-left: 0; margin-bottom: 0; }
+  .resp-card li { font-size: 12px; margin-bottom: 6px; padding-left: 14px; }
+  .resp-card li::before { top: 7px; width: 4px; height: 4px; }
+
+  /* Comparison grid */
+  .comp-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    margin: 24px 0;
+  }
+  .comp-card {
+    background: var(--dark-card);
+    border: 1px solid var(--color-blue-border);
+    border-radius: 9px;
+    padding: 24px;
+    text-align: center;
+  }
+  .comp-card.recommended {
+    border-color: var(--color-green);
+    background: rgba(74,222,128,0.06);
+  }
+  .comp-card .label {
+    font-family: var(--font-display);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+  }
+  .comp-card.recommended .label { color: var(--color-green); }
+  .comp-card .amount {
+    font-family: var(--font-display);
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--color-blue);
+    margin-bottom: 4px;
+  }
+  .comp-card.recommended .amount { color: var(--color-green); }
+  .comp-card .detail {
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  /* P&L split */
+  .split-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 20px 0;
+  }
+  .split-card {
+    background: var(--dark-card);
+    border: 1px solid var(--color-blue-border);
+    border-radius: 9px;
+    padding: 24px;
+    text-align: center;
+  }
+  .split-card .entity-name {
+    font-family: var(--font-display);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+  }
+  .split-card .split-amount {
+    font-family: var(--font-display);
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--color-blue);
+    margin-bottom: 4px;
+  }
+  .split-card .split-detail {
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  /* KPI grid */
+  .kpi-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    margin: 24px 0;
+  }
+  .kpi-card {
+    background: var(--dark-card);
+    border: 1px solid var(--color-blue-border);
+    border-radius: 9px;
+    padding: 20px;
+    text-align: center;
+  }
+  .kpi-card .kpi-label {
+    font-family: var(--font-display);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+  }
+  .kpi-card .kpi-target {
+    font-family: var(--font-display);
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--color-blue);
+    margin-bottom: 4px;
+  }
+  .kpi-card .kpi-detail {
+    font-size: 11px;
+    color: var(--text-muted);
+  }
+
+  /* Org chart */
+  .org-chart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    margin: 32px 0;
+  }
+  .org-node {
+    background: var(--dark-card);
+    border: 1px solid var(--color-blue-border);
+    border-radius: 9px;
+    padding: 14px 24px;
+    text-align: center;
+    min-width: 200px;
+  }
+  .org-node.highlight {
+    background: rgba(74,222,128,0.06);
+    border: 2px solid var(--color-green);
+  }
+  .org-node .title {
+    font-family: var(--font-display);
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--color-white);
+  }
+  .org-node .name {
+    font-size: 11px;
+    color: var(--text-muted);
+  }
+  .org-connector {
+    width: 2px;
+    height: 20px;
+    background: var(--color-blue-border);
+  }
+
+  /* Growth path */
+  .growth-path {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    margin: 24px 0;
+    justify-content: center;
+  }
+  .growth-step {
+    background: var(--dark-card);
+    border: 1px solid var(--color-blue-border);
+    border-radius: 9px;
+    padding: 16px 20px;
+    text-align: center;
+    min-width: 160px;
+  }
+  .growth-step.current {
+    background: rgba(74,222,128,0.06);
+    border-color: var(--color-green);
+  }
+  .growth-step .step-title {
+    font-family: var(--font-display);
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--color-white);
+  }
+  .growth-step .step-detail {
+    font-size: 11px;
+    color: var(--text-muted);
+  }
+  .growth-arrow {
+    font-size: 20px;
+    color: var(--text-faint);
+    padding: 0 8px;
+  }
+
+  /* JD block */
+  .jd-block {
+    background: var(--dark-card);
+    border: 1px solid var(--color-blue-border);
+    border-radius: 9px;
+    padding: 32px;
+    margin: 24px 0;
+  }
+  .jd-block h4 {
+    font-family: var(--font-display);
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--color-blue);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(46,117,247,0.1);
+  }
+  .jd-block p { font-size: 13px; }
+  .jd-block li { font-size: 13px; margin-bottom: 6px; }
+
+  /* Decision tiers */
+  .tier-green td:first-child { color: var(--color-green); font-weight: 600; }
+  .tier-amber td:first-child { color: var(--color-amber); font-weight: 600; }
+  .tier-red td:first-child { color: var(--color-red); font-weight: 600; }
+
+  /* Footer */
+  .footer {
+    padding: 40px 0;
+    text-align: center;
+  }
+  .footer-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-top: 1px solid rgba(46,117,247,0.1);
+    margin-bottom: 16px;
+  }
+  .footer-bar span {
+    font-family: var(--font-display);
+    font-size: 9px;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .footer-strip {
+    height: 12px;
+    background: var(--color-blue);
+    margin: 0 -40px;
+  }
+
+  /* Responsive */
+  @media (max-width: 700px) {
+    .resp-grid, .comp-grid, .kpi-grid, .split-grid { grid-template-columns: 1fr; }
+    .cover h1 { font-size: 32px; }
+    .cover-meta { flex-direction: column; gap: 8px; }
+    .growth-path { flex-direction: column; }
+    .growth-arrow { transform: rotate(90deg); }
+    .section-header { flex-direction: column; gap: 4px; }
+  }
+
+  @media print {
+    .brand-mark { position: absolute; }
+    .resp-grid, .comp-grid, .kpi-grid, .split-grid { break-inside: avoid; }
+    section { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Brand mark -->
+<div class="brand-mark">
+  <div class="brand-mark-bar"></div>
+  <div class="brand-mark-text">Mileage</div>
+</div>
+
+<!-- Cover -->
+<div class="cover">
+  <div class="page">
+    <div class="cover-label">Role Definition &amp; Compensation Package</div>
+    <h1>Marketing Coordinator</h1>
+    <div class="cover-sub">An Ohio-based liaison role connecting Lake Erie Golf Cars and Versatile with their agency partner — coordinating events locally, managing brand presence, and keeping the marketing engine fed across both businesses.</div>
+    <div class="cover-meta">
+      <span>Prepared for Lake Erie Golf Cars</span>
+      <span>May 2026</span>
+      <span>Prepared by Mileage Design</span>
+    </div>
+  </div>
+</div>
+
+<div class="page">
+
+<!-- Table of Contents -->
+<section>
+  <div class="section-header">
+    <span class="section-title">Contents</span>
+  </div>
+  <table>
+    <tbody>
+      <tr><td><strong>01</strong></td><td><a href="#s01" style="color:var(--color-blue); text-decoration:none;">Why This Role Exists</a></td></tr>
+      <tr><td><strong>02</strong></td><td><a href="#s02" style="color:var(--color-blue); text-decoration:none;">Start With an Intern This Summer</a></td></tr>
+      <tr><td><strong>03</strong></td><td><a href="#s03" style="color:var(--color-blue); text-decoration:none;">Where It Fits</a></td></tr>
+      <tr><td><strong>04</strong></td><td><a href="#s04" style="color:var(--color-blue); text-decoration:none;">Roles &amp; Responsibilities</a></td></tr>
+      <tr><td><strong>05</strong></td><td><a href="#s05" style="color:var(--color-blue); text-decoration:none;">Operating Rhythm &amp; Agency SLAs</a></td></tr>
+      <tr><td><strong>06</strong></td><td><a href="#s06" style="color:var(--color-blue); text-decoration:none;">Decision Authority &amp; Budget Tiers</a></td></tr>
+      <tr><td><strong>07</strong></td><td><a href="#s07" style="color:var(--color-blue); text-decoration:none;">Qualifications</a></td></tr>
+      <tr><td><strong>08</strong></td><td><a href="#s08" style="color:var(--color-blue); text-decoration:none;">Market Compensation Data</a></td></tr>
+      <tr><td><strong>09</strong></td><td><a href="#s09" style="color:var(--color-blue); text-decoration:none;">Compensation Recommendation</a></td></tr>
+      <tr><td><strong>10</strong></td><td><a href="#s10" style="color:var(--color-blue); text-decoration:none;">90-Day Success Metrics</a></td></tr>
+      <tr><td><strong>11</strong></td><td><a href="#s11" style="color:var(--color-blue); text-decoration:none;">Growth Path</a></td></tr>
+      <tr><td><strong>12</strong></td><td><a href="#s12" style="color:var(--color-blue); text-decoration:none;">Job Description — Ready to Post</a></td></tr>
+      <tr><td><strong>13</strong></td><td><a href="#s13" style="color:var(--color-blue); text-decoration:none;">Data Sources</a></td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- 01. Why This Role -->
+<section id="s01">
+  <div class="section-header">
+    <span class="section-num">01</span>
+    <span class="section-title">Why This Role Exists</span>
+  </div>
+  <p>With an agency partner handling the full marketing stack — SEO, paid media, website, content, social, reporting — the internal need shifts from a marketing leader who builds strategy to a coordinator who executes locally and keeps the machine fed.</p>
+  <p>This person owns three things the agency cannot own from the outside:</p>
+  <ul>
+    <li><strong>On-the-ground event execution</strong> — booth setup, golf course demos, trade shows, community sponsorships, showroom events</li>
+    <li><strong>Internal information flow</strong> — getting inventory updates, promotions, seasonal priorities, photos, and approvals from sales and service to the agency on time</li>
+    <li><strong>Brand presence at the local level</strong> — the day-to-day social posts, Google review responses, and community engagement that require someone in the building</li>
+  </ul>
+
+  <div class="card card-highlight">
+    <div class="card-label">Dual-Brand Scope — LEGC + Versatile</div>
+    <p>With the Versatile acquisition closing in the coming months (~5 locations in Minnesota), this role is scoped from day one to sit between both brands. The coordinator is Ohio-based — on-the-ground event execution and showroom presence are LEGC. Versatile scope is remote: agency liaison, brand consistency, content coordination, and operational intelligence sharing. One coordinator gives the agency a single internal point of contact across both businesses. The salary is split across both P&amp;Ls, making this a shared resource rather than a single-brand overhead line.</p>
+  </div>
+</section>
+
+<!-- 02. Start With an Intern -->
+<section id="s02">
+  <div class="section-header">
+    <span class="section-num">02</span>
+    <span class="section-title">Start With an Intern This Summer</span>
+  </div>
+  <p>Before committing to a full-time coordinator hire, there's a natural half-step: bring on a marketing intern for the summer. A college student home for break — someone studying marketing, communications, or business — can take on the highest-volume, lowest-risk parts of this role immediately and give LEGC a working prototype of what the coordinator position looks like in practice.</p>
+
+  <h3>What the Intern Owns</h3>
+  <ul>
+    <li><strong>Social media content capture and posting</strong> — daily photos/video from the showroom, deliveries, and service shop. Post to Facebook and Instagram with brand-consistent captions.</li>
+    <li><strong>Google review responses</strong> — reply to reviews within 24 hours using approved templates and tone guidelines</li>
+    <li><strong>Event support</strong> — assist with booth setup, on-site presence, lead capture, photo documentation, and post-event follow-up at golf course demos and community events</li>
+    <li><strong>Asset organization</strong> — catalog the existing photo/video library, identify gaps, and build an organized asset folder the agency can pull from</li>
+    <li><strong>Agency communication support</strong> — help relay basic information (inventory updates, product photos, spec sheets) to the agency on a defined schedule</li>
+  </ul>
+
+  <h3>What the Intern Does Not Own</h3>
+  <ul>
+    <li style="color: var(--text-muted);">Independent event planning or vendor negotiations</li>
+    <li style="color: var(--text-muted);">Budget decisions of any size — all spend goes through VP Ops</li>
+    <li style="color: var(--text-muted);">Agency strategy calls or creative direction</li>
+    <li style="color: var(--text-muted);">Brand messaging decisions or sponsorship commitments</li>
+    <li style="color: var(--text-muted);">Versatile coordination — intern scope is LEGC Ohio only</li>
+  </ul>
+
+  <h3>Intern Compensation</h3>
+  <div class="card card-highlight">
+    <p><strong>$15–$18/hour, 30–40 hours/week, 10–12 weeks (June–August).</strong> Total cost: approximately $5,400–$8,640 for the summer. No benefits required. This is a fraction of the coordinator salary and gives LEGC real data on what kind of person they need for the full-time role — plus a summer's worth of content, organized assets, and event presence they wouldn't otherwise have.</p>
+  </div>
+
+  <h3>What LEGC Learns</h3>
+  <p>The intern isn't just cheap labor — they're a test run. By the end of summer, LEGC will know:</p>
+  <ul>
+    <li>How much time social media and review responses actually take per week</li>
+    <li>What the agency actually needs from an internal contact (and what falls through the cracks without one)</li>
+    <li>Whether the event workload justifies a dedicated person or can be absorbed into existing roles</li>
+    <li>What skills to prioritize in the full-time coordinator hire — informed by real experience, not guesswork</li>
+  </ul>
+
+  <div class="card card-green">
+    <p><strong>Best case:</strong> the intern is strong enough to convert into the full-time coordinator role after graduation. You've already trained them, they know the business, and the agency relationship is already established. <strong>Either way:</strong> LEGC enters the coordinator hiring process in the fall with a much clearer picture of what the role actually requires day-to-day.</p>
+  </div>
+</section>
+
+<!-- 03. Where It Fits -->
+<section id="s03">
+  <div class="section-header">
+    <span class="section-num">03</span>
+    <span class="section-title">Where It Fits</span>
+  </div>
+  <p>This is a coordinator-level position. It reports to operations leadership internally and partners directly with the agency account team externally. It does not replace the strategic marketing function — that lives with the agency. It replaces the operational marketing function — the execution, coordination, and local presence.</p>
+
+  <div class="org-chart">
+    <div class="org-node">
+      <div class="title">Owners</div>
+      <div class="name">Dan Connor &amp; Nick Reif</div>
+    </div>
+    <div class="org-connector"></div>
+    <div class="org-node">
+      <div class="title">VP Operations / GM</div>
+      <div class="name">James Powell / Frank Cisterino</div>
+    </div>
+    <div class="org-connector"></div>
+    <div class="org-node highlight">
+      <div class="title">Marketing Coordinator</div>
+      <div class="name">New Hire — Shared LEGC + Versatile</div>
+    </div>
+    <div class="org-connector"></div>
+    <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+      <div class="org-node" style="min-width:140px;">
+        <div class="title">Agency Partner</div>
+        <div class="name">Outsourced Marketing</div>
+      </div>
+      <div class="org-node" style="min-width:140px;">
+        <div class="title">LEGC — Ohio</div>
+        <div class="name">Warrensville Heights &amp; Canfield</div>
+      </div>
+      <div class="org-node" style="min-width:140px;">
+        <div class="title">Versatile — Minnesota</div>
+        <div class="name">~5 Locations (Remote Scope)</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card card-green">
+    <p><strong>Key distinction:</strong> This person does not need to know how to run Google Ads, write SEO content, or build a website. They need to know how to get the agency what it needs, manage a calendar, run an event, and keep both brands looking sharp in the community.</p>
+  </div>
+</section>
+
+<!-- 04. Responsibilities -->
+<section id="s04">
+  <div class="section-header">
+    <span class="section-num">04</span>
+    <span class="section-title">Roles &amp; Responsibilities</span>
+  </div>
+  <p>Time allocation across four core areas. Percentages shift seasonally — event season (April–October) pushes Events &amp; Community to ~45% at the expense of Brand &amp; Social and Internal Coordination. Off-season (November–March) reverses this, with more time for asset organization, planning, and agency prep work.</p>
+
+  <div class="resp-grid">
+    <div class="resp-card">
+      <h4>Agency Liaison</h4>
+      <div class="pct">~30%</div>
+      <div class="season-note">Steady year-round</div>
+      <ul>
+        <li>Primary internal contact for the agency across both brands</li>
+        <li>Relay promotions, seasonal priorities, and inventory updates to the agency</li>
+        <li>Review and route agency deliverables for internal approval</li>
+        <li>Share product photos, spec sheets, and brand assets as needed</li>
+        <li>Attend monthly strategy calls and relay action items internally</li>
+        <li>Manage content approval timelines so nothing bottlenecks</li>
+        <li>Flag brand-specific differences to ensure correct assets reach the agency per brand</li>
+      </ul>
+    </div>
+    <div class="resp-card">
+      <h4>Events &amp; Community</h4>
+      <div class="pct">~35%</div>
+      <div class="season-note">Peaks to ~45% Apr–Oct</div>
+      <ul>
+        <li>Plan and coordinate golf course demos, trade shows, and community events</li>
+        <li>Manage event logistics: venue, booth, materials, staffing, catering, signage</li>
+        <li>Execute on-site event presence at LEGC's Ohio locations and regional venues</li>
+        <li>Coordinate with golf course partners (100+ relationships in Ohio)</li>
+        <li>Track event ROI: leads captured, follow-up completion, sales attributed</li>
+        <li>Manage event calendar and annual event budget</li>
+        <li>Post-event follow-up: lead handoff to sales, thank-you communications</li>
+      </ul>
+    </div>
+    <div class="resp-card">
+      <h4>Brand &amp; Social Presence</h4>
+      <div class="pct">~20%</div>
+      <div class="season-note">Rises to ~25% Nov–Mar</div>
+      <ul>
+        <li>Day-to-day social media posting (Facebook, Instagram) — real-time content from showroom, events, deliveries</li>
+        <li>Respond to Google reviews and social comments for both brands</li>
+        <li>Capture and organize photos/video from the floor for agency use</li>
+        <li>Maintain brand consistency — separate identities for LEGC and Versatile</li>
+        <li>Coordinate local sponsorships and chamber activities</li>
+      </ul>
+    </div>
+    <div class="resp-card">
+      <h4>Internal Coordination</h4>
+      <div class="pct">~15%</div>
+      <div class="season-note">Rises to ~20% Nov–Mar</div>
+      <ul>
+        <li>Gather input from sales, service, and parts for marketing initiatives</li>
+        <li>Communicate marketing plans and campaign launches to internal teams</li>
+        <li>Track promotional materials inventory (brochures, signage, swag) per brand</li>
+        <li>Coordinate across LEGC's Ohio locations and remotely with Versatile's Minnesota operations</li>
+        <li>Maintain marketing asset library (photos, videos, logos, spec sheets)</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 05. Operating Rhythm -->
+<section id="s05">
+  <div class="section-header">
+    <span class="section-num">05</span>
+    <span class="section-title">Operating Rhythm &amp; Agency SLAs</span>
+  </div>
+  <p>Clear cadence and response expectations between the coordinator, internal leadership, and the agency account team. These keep the marketing engine running without either side waiting on the other.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Cadence</th>
+        <th>Activity</th>
+        <th>Participants</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Daily</strong></td>
+        <td>Social media posting (1–2 posts per brand); Google review responses within 24 hours</td>
+        <td>Coordinator</td>
+      </tr>
+      <tr>
+        <td><strong>3–4 Day SLA</strong></td>
+        <td>Agency content/creative review turnaround — coordinator routes internally and returns feedback within 3–4 business days</td>
+        <td>Coordinator + Internal Approvers</td>
+      </tr>
+      <tr>
+        <td><strong>Weekly</strong></td>
+        <td>15-min check-in with agency account lead (Slack or call) — open items, upcoming needs, blockers</td>
+        <td>Coordinator + Agency</td>
+      </tr>
+      <tr>
+        <td><strong>Monthly</strong></td>
+        <td>Strategy call: performance review, next month priorities, event calendar sync, content calendar approval</td>
+        <td>Coordinator + Agency + VP Ops/GM</td>
+      </tr>
+      <tr>
+        <td><strong>Quarterly</strong></td>
+        <td>Business review: results against KPIs, budget review, strategic adjustments, next quarter event plan</td>
+        <td>Coordinator + Agency + Leadership</td>
+      </tr>
+      <tr>
+        <td><strong>Annually</strong></td>
+        <td>Marketing plan and budget approval for the following year; event calendar finalized</td>
+        <td>Full Team</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+</section>
+
+<!-- 06. Decision Authority -->
+<section id="s06">
+  <div class="section-header">
+    <span class="section-num">06</span>
+    <span class="section-title">Decision Authority &amp; Budget Tiers</span>
+  </div>
+  <p>The coordinator needs defined authority to keep things moving without bottlenecking on approvals for routine decisions.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Tier</th>
+        <th>Authority</th>
+        <th>Examples</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="tier-green">
+        <td>Green — Autonomous</td>
+        <td>Coordinator decides, no approval needed</td>
+        <td>Social media posts, review responses, routine event logistics, photo/video capture, asset sharing with agency, routine content approvals</td>
+      </tr>
+      <tr class="tier-amber">
+        <td>Amber — Inform</td>
+        <td>Coordinator decides, notifies VP Ops same day</td>
+        <td>Mid-range event spend, vendor selections for existing events, promotional material reorders, scheduling changes</td>
+      </tr>
+      <tr class="tier-red">
+        <td>Red — Approve</td>
+        <td>Requires VP Ops sign-off before proceeding</td>
+        <td>Significant event spend, new event commitments, sponsorship agreements, brand messaging changes, agency scope discussions, any spend outside the approved annual budget</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Annual Event Budget</h3>
+  <p>Recommend establishing a fixed annual event budget that the coordinator manages within the Green and Amber tiers above. This gives them the room to execute without death-by-approval on every booth fee, while keeping significant commitments in leadership's hands.</p>
+</section>
+
+<!-- 07. Qualifications -->
+<section id="s07">
+  <div class="section-header">
+    <span class="section-num">07</span>
+    <span class="section-title">Qualifications</span>
+  </div>
+
+  <h3>Required</h3>
+  <ul>
+    <li><strong>1–3 years</strong> in marketing coordination, event coordination, or a similar operational marketing role</li>
+    <li><strong>Event planning experience</strong> — trade shows, demos, community events, or similar</li>
+    <li><strong>Strong organizational skills</strong> — managing calendars, deadlines, vendor relationships, and multiple projects simultaneously</li>
+    <li><strong>Comfortable working with external agencies</strong> — routing feedback, managing approvals, keeping timelines on track</li>
+    <li><strong>Social media fluency</strong> — ability to post real-time content, respond to community engagement, and maintain a consistent brand voice</li>
+    <li><strong>Reliable transportation and willingness to travel</strong> — regular travel between LEGC's two Ohio locations (Warrensville Heights and Canfield, ~70 miles apart) and to event venues throughout Northeast Ohio. Occasional travel to Versatile's Minnesota locations as needed. Mileage reimbursement provided (see compensation).</li>
+    <li><strong>Willingness to work occasional evenings and weekends</strong> for events, particularly April through October</li>
+  </ul>
+
+  <h3>Preferred</h3>
+  <ul>
+    <li>Experience in automotive, powersports, dealership, or recreational vehicle industries</li>
+    <li>Familiarity with basic marketing analytics (reading a Google Analytics report, understanding ad performance numbers the agency sends over)</li>
+    <li>Photography/video capture skills (iPhone-level is fine — not production)</li>
+    <li>Experience managing marketing budgets or event budgets</li>
+    <li>Bachelor's degree in marketing, communications, or business (practical experience weighted equally)</li>
+    <li>Multi-location or multi-brand experience</li>
+  </ul>
+
+  <h3>Not Required</h3>
+  <p style="color: var(--text-muted); font-size: 13px;">The following are handled by the agency and should not be part of the hiring criteria:</p>
+  <ul>
+    <li style="color: var(--text-muted);">SEO, SEM, or paid media management</li>
+    <li style="color: var(--text-muted);">Website development or CMS management</li>
+    <li style="color: var(--text-muted);">Graphic design or ad creative production</li>
+    <li style="color: var(--text-muted);">Marketing strategy development</li>
+    <li style="color: var(--text-muted);">Analytics or reporting infrastructure</li>
+  </ul>
+</section>
+
+<!-- 08. Market Data -->
+<section id="s08">
+  <div class="section-header">
+    <span class="section-num">08</span>
+    <span class="section-title">Market Compensation Data</span>
+  </div>
+  <p>Salary data compiled from six sources for the Cleveland / Northeast Ohio market, specific to marketing coordinator roles. The event-heavy, multi-brand, agency-liaison, multi-location scope of this role positions it above a standard marketing coordinator.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Source</th>
+        <th>Low</th>
+        <th>Median / Avg</th>
+        <th>High</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>ZipRecruiter (Cleveland)</td>
+        <td>$27,155</td>
+        <td>$50,037</td>
+        <td>$65,948</td>
+      </tr>
+      <tr>
+        <td>PayScale (Cleveland)</td>
+        <td>—</td>
+        <td>$48,378</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td>Indeed (Cleveland)</td>
+        <td>—</td>
+        <td>$57,177</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td>Glassdoor (Cleveland)</td>
+        <td>$32,344</td>
+        <td>$44,222</td>
+        <td>$60,463</td>
+      </tr>
+      <tr>
+        <td>Indeed (Ohio statewide)</td>
+        <td>—</td>
+        <td>$48,723</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td>PayScale (National)</td>
+        <td>$40,442</td>
+        <td>$52,845</td>
+        <td>$68,317</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p style="font-size: 12px; color: var(--text-muted);">Event coordinator overlay for Cleveland: ZipRecruiter reports $18.65–$26.83/hr (25th–75th percentile), averaging ~$49,358/yr. PayScale national event coordinator median: $46,685. Multi-brand premium and agency-liaison scope add 5–10% to standard coordinator benchmarks.</p>
+
+  <h3>Comparable Postings in Market</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Role / Company</th>
+        <th>Location</th>
+        <th>Salary</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Automotive Marketing Coordinator — Dealership (Wizehire)</td>
+        <td>Strongsville, OH</td>
+        <td>~$45,000</td>
+      </tr>
+      <tr>
+        <td>Event &amp; Social Media Coordinator — Harley-Davidson Dealerships</td>
+        <td>Cleveland, OH</td>
+        <td>$37,400–$41,600</td>
+      </tr>
+      <tr>
+        <td>Marketing &amp; Events Coordinator — JobTread Software</td>
+        <td>Dallas, TX</td>
+        <td>$45,000–$55,000 est.</td>
+      </tr>
+      <tr>
+        <td>Digital Marketing &amp; Events Coordinator — ResourceWise (6-brand parent)</td>
+        <td>Remote</td>
+        <td>Commensurate</td>
+      </tr>
+      <tr>
+        <td>Marketing Coordinator — Powersports (V20 Recruiting)</td>
+        <td>National</td>
+        <td>$38,000–$75,000</td>
+      </tr>
+      <tr>
+        <td>Junior Event Marketing Coordinator — Ohio Dealership</td>
+        <td>Ohio</td>
+        <td>~$52,000</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- 09. Compensation Recommendation -->
+<section id="s09">
+  <div class="section-header">
+    <span class="section-num">09</span>
+    <span class="section-title">Compensation Recommendation</span>
+  </div>
+  <p>Based on the Cleveland market data, the expanded scope (events + agency liaison + dual-brand + multi-location travel), and the industry (specialty retail / recreational vehicles):</p>
+
+  <div class="comp-grid">
+    <div class="comp-card">
+      <div class="label">Entry-Level</div>
+      <div class="amount">$45K</div>
+      <div class="detail">0–1 years experience<br>Needs training on agency workflow</div>
+    </div>
+    <div class="comp-card recommended">
+      <div class="label">Target Range</div>
+      <div class="amount">$48–52K</div>
+      <div class="detail">1–3 years experience<br>Event background + organized</div>
+    </div>
+    <div class="comp-card">
+      <div class="label">Experienced</div>
+      <div class="amount">$53–55K</div>
+      <div class="detail">3–5 years experience<br>Multi-brand / dealership background</div>
+    </div>
+  </div>
+
+  <h3>P&amp;L Split — Shared Resource Across Both Brands</h3>
+  <p>Because this coordinator sits between LEGC and Versatile, the salary is allocated across both P&amp;Ls. This makes the role a shared investment rather than single-brand overhead.</p>
+
+  <div class="split-grid">
+    <div class="split-card">
+      <div class="entity-name">Lake Erie Golf Cars</div>
+      <div class="split-amount">$24,000–$27,500</div>
+      <div class="split-detail">50% allocation<br>2 Ohio locations, established brand</div>
+    </div>
+    <div class="split-card">
+      <div class="entity-name">Versatile</div>
+      <div class="split-amount">$24,000–$27,500</div>
+      <div class="split-detail">50% allocation<br>~5 MN locations, remote coordination</div>
+    </div>
+  </div>
+
+  <p style="font-size: 13px;">The split can be adjusted as Versatile ramps — 60/40 LEGC-heavy in the first 6 months, moving toward 50/50 as both brands reach steady-state marketing operations. The coordinator's time allocation between brands should roughly mirror the P&amp;L split.</p>
+
+  <div class="card card-green">
+    <p><strong>Our recommendation: Post at $48,000–$52,000.</strong> This range is competitive for the Cleveland market, attracts candidates with real event and multi-location experience, and reflects the dual-brand scope. At ~$24–26K per entity, each business gets a dedicated marketing presence for less than the cost of a part-time hire.</p>
+  </div>
+
+  <h3>Additional Compensation Elements</h3>
+  <ul>
+    <li><strong>Mileage reimbursement:</strong> IRS standard rate (currently $0.70/mile) for travel between LEGC's two Ohio locations and to event venues. At ~70 miles round-trip between Warrensville Heights and Canfield, 2–3 trips/week during event season, this runs approximately $200–$400/month.</li>
+    <li><strong>Benefits:</strong> Align with existing LEGC employee benefits package (health insurance, PTO, etc.)</li>
+    <li><strong>Event schedule flexibility:</strong> Comp time or flex hours for evening/weekend events</li>
+  </ul>
+
+</section>
+
+<!-- 10. 90-Day Success Metrics -->
+<section id="s10">
+  <div class="section-header">
+    <span class="section-num">10</span>
+    <span class="section-title">90-Day Success Metrics</span>
+  </div>
+  <p>How to know this hire is working — measurable outcomes by the end of the first quarter.</p>
+
+  <div class="kpi-grid">
+    <div class="kpi-card">
+      <div class="kpi-label">Agency SLA</div>
+      <div class="kpi-target">3–4 days</div>
+      <div class="kpi-detail">Content/creative review turnaround</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Events Planned</div>
+      <div class="kpi-target">3–5</div>
+      <div class="kpi-detail">Coordinated and executed (LEGC Ohio)</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Social Cadence</div>
+      <div class="kpi-target">3–5/wk</div>
+      <div class="kpi-detail">Posts per brand, per week</div>
+    </div>
+  </div>
+
+  <h3>First 90 Days — Detailed Milestones</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Window</th>
+        <th>Milestone</th>
+        <th>Measured By</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Days 1–30</strong></td>
+        <td>Agency relationship established: attend first monthly strategy call, complete onboarding with agency team, set up communication channels (Slack, shared calendar)</td>
+        <td>Agency confirms onboarding complete</td>
+      </tr>
+      <tr>
+        <td><strong>Days 1–30</strong></td>
+        <td>Asset audit completed: current photo/video library cataloged, gaps identified, initial content capture schedule created</td>
+        <td>Asset library documented and shared</td>
+      </tr>
+      <tr>
+        <td><strong>Days 31–60</strong></td>
+        <td>Social media cadence established at 3–5 posts per week per brand with real showroom/event content (not stock)</td>
+        <td>Post log and engagement metrics</td>
+      </tr>
+      <tr>
+        <td><strong>Days 31–60</strong></td>
+        <td>Event calendar built for next 6 months for LEGC Ohio locations; Versatile event coordination scope defined remotely; first LEGC event independently coordinated</td>
+        <td>Calendar shared with leadership + agency</td>
+      </tr>
+      <tr>
+        <td><strong>Days 61–90</strong></td>
+        <td>Agency review turnaround consistently within 3–4 business days; no campaigns delayed due to internal approval bottleneck</td>
+        <td>Agency confirms SLA compliance</td>
+      </tr>
+      <tr>
+        <td><strong>Days 61–90</strong></td>
+        <td>Google reviews responded to within 24 hours across both brands; review volume tracking established</td>
+        <td>GBP response rate log</td>
+      </tr>
+      <tr>
+        <td><strong>Day 90</strong></td>
+        <td>First quarterly business review completed — coordinator presents event results, content metrics, and next quarter plan</td>
+        <td>QBR deck presented to leadership</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="card card-amber">
+    <p><strong>What "not working" looks like:</strong> Agency consistently waiting 5+ days for approvals. Events happening without lead capture or follow-up. Social accounts going dark for a week or more. Internal teams confused about who to send marketing requests to. These are the signals to address early — not at the 6-month mark.</p>
+  </div>
+</section>
+
+<!-- 11. Growth Path -->
+<section id="s11">
+  <div class="section-header">
+    <span class="section-num">11</span>
+    <span class="section-title">Growth Path</span>
+  </div>
+  <p>Coordinator-level roles have 18–24 month turnover risk if there is no visible path forward. Defining that path upfront signals long-term investment and attracts better candidates.</p>
+
+  <div class="growth-path">
+    <div class="growth-step current">
+      <div class="step-title">Summer Intern</div>
+      <div class="step-detail">Summer 2026 — Learn &amp; support</div>
+    </div>
+    <div class="growth-arrow">&#8594;</div>
+    <div class="growth-step">
+      <div class="step-title">Marketing Coordinator</div>
+      <div class="step-detail">Year 1 — Execute &amp; own</div>
+    </div>
+    <div class="growth-arrow">&#8594;</div>
+    <div class="growth-step">
+      <div class="step-title">Senior Coordinator</div>
+      <div class="step-detail">Year 2 — Own event P&amp;L</div>
+    </div>
+    <div class="growth-arrow">&#8594;</div>
+    <div class="growth-step">
+      <div class="step-title">Marketing Manager</div>
+      <div class="step-detail">Year 3+ — Lead internal team</div>
+    </div>
+  </div>
+
+  <ul>
+    <li><strong>Summer 2026 (Intern):</strong> Learn the business, capture content, support events, build the asset library. Low cost, high learning — for both the intern and LEGC.</li>
+    <li><strong>Year 1 (Coordinator):</strong> Master the agency workflow, build event playbook, establish brand presence cadence. Own the execution. If the intern converts, they already have a head start.</li>
+    <li><strong>Year 2 (Senior Coordinator):</strong> Take ownership of event budget and ROI reporting. Begin managing vendor relationships independently. Potential title bump to Senior Marketing Coordinator ($55–60K) if KPIs met.</li>
+    <li><strong>Year 3+ (Marketing Manager):</strong> As LEGC + Versatile grow (additional locations, new acquisitions), this role could evolve into a Marketing Manager overseeing junior coordinators per brand — while the agency relationship continues to handle the specialist work.</li>
+  </ul>
+
+  <p style="font-size: 13px;">This path is not guaranteed — it depends on performance and business growth. But starting with an intern this summer and defining the full trajectory from day one attracts people who want to build something, not just fill a seat.</p>
+</section>
+
+<!-- 12. Job Description -->
+<section id="s12">
+  <div class="section-header">
+    <span class="section-num">12</span>
+    <span class="section-title">Job Description — Ready to Post</span>
+  </div>
+  <p>Below is a clean job description formatted for Indeed, LinkedIn, or internal use. Adjust benefits details as needed before posting.</p>
+
+  <div class="jd-block">
+    <h4>Marketing Coordinator — Lake Erie Golf Cars</h4>
+    <p style="margin-bottom: 20px;"><strong>Location:</strong> Warrensville Heights, OH (with regular travel to Canfield location and event venues throughout NEO)<br>
+    <strong>Type:</strong> Full-time<br>
+    <strong>Reports to:</strong> VP Operations / General Manager<br>
+    <strong>Compensation:</strong> $48,000–$52,000 annually, commensurate with experience</p>
+
+    <h4>About Lake Erie Golf Cars</h4>
+    <p>Lake Erie Golf Cars has been Northeast Ohio's trusted source for golf carts for 40 years. As an authorized E-Z-GO dealer serving 100+ golf courses and thousands of residential, commercial, and recreational customers across two locations, we're growing — and we're looking for a marketing coordinator to be the connective tissue between our team, our agency partner, and our community.</p>
+
+    <h4>The Role</h4>
+    <p>You'll be the internal marketing point person — coordinating events, managing the flow of information between our team and our external marketing agency, keeping our social media active with real content from the showroom and the field, and making sure both of our locations are represented in everything we do. You'll also coordinate remotely with our sister brand as we grow. This is a hands-on coordination role, not a strategy role. Our agency handles SEO, advertising, website, and analytics. You keep the engine running on the ground.</p>
+
+    <h4>What You'll Do</h4>
+    <ul>
+      <li>Plan and execute events: golf course demos, trade shows, community sponsorships, showroom events, and grand openings</li>
+      <li>Serve as the primary contact between our team and our marketing agency — relay priorities, route approvals, share assets, and keep campaigns on schedule</li>
+      <li>Post real-time social media content from events, deliveries, the showroom floor, and the service shop</li>
+      <li>Respond to Google reviews and social media comments</li>
+      <li>Coordinate across our Warrensville Heights and Canfield locations on marketing needs</li>
+      <li>Capture photos and video from daily operations for use in marketing materials</li>
+      <li>Manage event budgets, vendor relationships, and promotional materials inventory</li>
+      <li>Track leads from events and ensure follow-up happens</li>
+      <li>Maintain and organize our marketing asset library (photos, logos, spec sheets, signage)</li>
+    </ul>
+
+    <h4>What We're Looking For</h4>
+    <ul>
+      <li>1–3 years in marketing coordination, event coordination, or a similar role</li>
+      <li>Hands-on event planning experience — you've run a booth, managed vendors, and handled the logistics</li>
+      <li>Organized and reliable — you manage calendars, hit deadlines, and keep multiple projects moving</li>
+      <li>Comfortable with social media — you can post in the moment and keep a brand voice consistent</li>
+      <li>Good communicator — you'll sit between our leadership team and an external agency, and both need to trust you</li>
+      <li>Willing to travel between our two Ohio locations and to event venues across Northeast Ohio (mileage reimbursed)</li>
+      <li>Available for occasional evenings and weekends during event season (April–October)</li>
+    </ul>
+
+    <h4>Nice to Have</h4>
+    <ul>
+      <li>Experience in automotive, powersports, or recreational vehicle industries</li>
+      <li>Multi-location or multi-brand experience</li>
+      <li>Comfortable reading basic marketing reports (the agency provides them — you just need to understand what they mean)</li>
+      <li>Photography or video skills (phone-level is fine)</li>
+    </ul>
+
+    <h4>What We Offer</h4>
+    <ul>
+      <li>Competitive salary ($48,000–$52,000)</li>
+      <li>Health insurance, paid time off, and company benefits</li>
+      <li>Mileage reimbursement for travel between locations and to events</li>
+      <li>A 40-year-old company with a strong reputation and loyal customer base</li>
+      <li>A role where you're the go-to person, not buried in a department</li>
+      <li>A professional agency partnership that handles the technical marketing — you focus on what happens on the ground</li>
+      <li>Growth opportunity as we expand to additional brands and locations</li>
+    </ul>
+
+    <p style="font-size: 12px; color: var(--text-muted); margin-top: 20px; padding-top: 16px; border-top: 1px solid rgba(46,117,247,0.1);">Lake Erie Golf Cars is an equal opportunity employer. We celebrate diversity and are committed to creating an inclusive environment for all employees. All qualified applicants will receive consideration for employment without regard to race, color, religion, sex, sexual orientation, gender identity, national origin, disability, or veteran status. Reasonable accommodations are available for qualified individuals with disabilities.</p>
+  </div>
+</section>
+
+<!-- 13. Sources -->
+<section id="s13">
+  <div class="section-header">
+    <span class="section-num">13</span>
+    <span class="section-title">Data Sources</span>
+  </div>
+  <p style="font-size: 12px; color: var(--text-muted);">Salary data: ZipRecruiter Cleveland (Dec 2024), PayScale Cleveland (Apr 2026), Indeed Cleveland (Apr 2026), Glassdoor Cleveland (2026), Indeed Ohio (Apr 2026), PayScale National (Apr 2026). Comparable postings: Wizehire Automotive Marketing Coordinator template, American Road Group / Harley-Davidson (Indeed), JobTread Software careers, ResourceWise careers, V20 Recruiting powersports roles, Glassdoor Cleveland marketing coordinator listings. Event coordinator overlay: ZipRecruiter Cleveland, PayScale National. Multi-brand premium estimate based on ResourceWise (6-brand) and V20 Recruiting (multi-location powersports) comp data.</p>
+  <p style="font-size: 12px; color: var(--text-muted);">Benefits load factor (25%) based on BLS Employer Costs for Employee Compensation, Q1 2026. IRS standard mileage rate: $0.70/mile (2025 rate; 2026 rate pending).</p>
+</section>
+
+</div>
+
+<!-- Footer -->
+<div class="page">
+  <div class="footer">
+    <div class="footer-bar">
+      <span>Lake Erie Golf Cars</span>
+      <span>Marketing Coordinator Role Package</span>
+    </div>
+  </div>
+</div>
+<div class="footer-strip" style="height:12px; background:#2E75F7;"></div>
+
+</body>
+</html>
