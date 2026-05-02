@@ -532,6 +532,11 @@ td strong { color: var(--text-primary); }
   padding: 16px 20px;
   text-align: center;
   min-width: 160px;
+  transition: border-color 0.2s, background 0.2s;
+}
+a.growth-step:hover {
+  border-color: var(--color-blue);
+  background: rgba(46,117,247,0.08);
 }
 .growth-step.current {
   background: rgba(74,222,128,0.06);
