@@ -140,93 +140,85 @@
     letter-spacing: 0.5px;
   }
 
-  /* Sticky nav — two-level */
+  /* Sticky nav — single level */
   html { scroll-behavior: smooth; }
   .section-nav {
     position: sticky;
     top: 0;
     z-index: 150;
-    background: var(--dark-card);
+    background: var(--dark-card-alt);
     border-bottom: 2px solid var(--color-blue);
     box-shadow: 0 4px 20px rgba(0,0,0,0.5);
   }
-  /* Level 1 — category row */
-  .nav-level-1 {
-    background: var(--dark-card-alt);
-    border-bottom: 1px solid rgba(46,117,247,0.15);
-  }
-  .nav-level-1-inner {
+  .section-nav-inner {
     max-width: 860px;
     margin: 0 auto;
     display: flex;
-    padding: 0 40px;
+    padding: 0;
   }
-  .nav-level-1 a {
+  .section-nav a {
     display: block;
-    padding: 10px 16px;
+    flex: 1;
+    padding: 14px 24px;
     text-decoration: none;
     color: var(--text-muted);
     font-family: var(--font-display);
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 800;
-    white-space: nowrap;
-    letter-spacing: 2px;
+    letter-spacing: 2.5px;
     text-transform: uppercase;
-    border-bottom: 2px solid transparent;
+    text-align: center;
+    border-bottom: 3px solid transparent;
     transition: color 0.2s, border-color 0.2s, background 0.2s;
   }
-  .nav-level-1 a:hover { color: var(--color-white); background: rgba(46,117,247,0.08); }
-  .nav-level-1 a.active {
+  .section-nav a:hover { color: var(--color-white); background: rgba(46,117,247,0.08); }
+  .section-nav a.active {
     color: var(--color-white);
-    background: rgba(46,117,247,0.12);
+    background: rgba(46,117,247,0.15);
     border-bottom-color: var(--color-blue);
   }
-  /* Level 2 — section row */
-  .nav-level-2 {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
+
+  /* Part divider */
+  .part-divider {
+    padding: 48px 0 12px;
+    scroll-margin-top: 56px;
   }
-  .nav-level-2::-webkit-scrollbar { display: none; }
-  .nav-level-2-inner {
-    max-width: 860px;
-    margin: 0 auto;
-    display: flex;
-    padding: 0 40px;
-  }
-  .nav-level-2 a {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    padding: 9px 14px;
-    text-decoration: none;
-    color: var(--text-muted);
+  .part-label {
     font-family: var(--font-display);
     font-size: 10px;
-    font-weight: 700;
-    white-space: nowrap;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    transition: color 0.2s, background 0.2s;
-    border-radius: 4px;
-    margin: 4px 0;
-  }
-  .nav-level-2 a:hover { color: var(--text-primary); background: rgba(255,255,255,0.05); }
-  .nav-level-2 a.active {
-    color: var(--color-white);
-    background: var(--color-blue);
-  }
-  .nav-level-2 a .nav-num {
     font-weight: 800;
-    opacity: 0.7;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--color-blue);
+    margin-bottom: 8px;
   }
-  .nav-level-2 a.active .nav-num { opacity: 1; }
+  .part-title {
+    font-family: var(--font-display);
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--color-white);
+    margin-bottom: 8px;
+    line-height: 1.2;
+  }
+  .part-desc {
+    font-size: 14px;
+    color: var(--text-secondary);
+    max-width: 640px;
+    line-height: 1.7;
+  }
+  .part-divider-line {
+    width: 48px;
+    height: 3px;
+    background: var(--color-blue);
+    border-radius: 2px;
+    margin-top: 20px;
+  }
 
   /* Sections */
   section {
     padding: 52px 0;
     border-bottom: 1px solid rgba(46,117,247,0.1);
-    scroll-margin-top: 80px;
+    scroll-margin-top: 56px;
   }
   section:last-child { border-bottom: none; }
 
@@ -662,7 +654,7 @@
   <div class="page" style="position:relative; z-index:1;">
     <div class="cover-label">Role Definition &amp; Compensation Package</div>
     <h1>Marketing Coordinator</h1>
-    <div class="cover-sub">An Ohio-based liaison role connecting Lake Erie Golf Cars and Versatile with their agency partner — coordinating events locally, managing brand presence, and keeping the marketing engine fed across both businesses.</div>
+    <div class="cover-sub">A two-part plan for building marketing capacity at Lake Erie Golf Cars — starting with a summer intern this year, building toward a full-time coordinator who connects LEGC and Versatile with their agency partner.</div>
     <div class="cover-meta">
       <span>Prepared for Lake Erie Golf Cars</span>
       <span>May 2026</span>
@@ -671,61 +663,28 @@
   </div>
 </div>
 
-<!-- Sticky section nav — two level -->
+<!-- Sticky nav -->
 <nav class="section-nav" id="sectionNav">
-  <div class="nav-level-1">
-    <div class="nav-level-1-inner">
-      <a href="#s01" data-group="strategy">Strategy</a>
-      <a href="#s03" data-group="role">Role Definition</a>
-      <a href="#s07" data-group="comp">Compensation</a>
-      <a href="#s10" data-group="metrics">Metrics &amp; Growth</a>
-      <a href="#s12" data-group="posting">Job Posting</a>
-    </div>
-  </div>
-  <div class="nav-level-2">
-    <div class="nav-level-2-inner" id="navLevel2">
-      <a href="#s01" data-group="strategy"><span class="nav-num">01</span> Why</a>
-      <a href="#s02" data-group="strategy"><span class="nav-num">02</span> Intern</a>
-      <a href="#s03" data-group="role"><span class="nav-num">03</span> Org</a>
-      <a href="#s04" data-group="role"><span class="nav-num">04</span> Roles</a>
-      <a href="#s05" data-group="role"><span class="nav-num">05</span> Rhythm</a>
-      <a href="#s06" data-group="role"><span class="nav-num">06</span> Authority</a>
-      <a href="#s07" data-group="comp"><span class="nav-num">07</span> Quals</a>
-      <a href="#s08" data-group="comp"><span class="nav-num">08</span> Market Data</a>
-      <a href="#s09" data-group="comp"><span class="nav-num">09</span> Recommendation</a>
-      <a href="#s10" data-group="metrics"><span class="nav-num">10</span> 90-Day KPIs</a>
-      <a href="#s11" data-group="metrics"><span class="nav-num">11</span> Growth Path</a>
-      <a href="#s12" data-group="posting"><span class="nav-num">12</span> Job Description</a>
-      <a href="#s13" data-group="posting"><span class="nav-num">13</span> Sources</a>
-    </div>
+  <div class="section-nav-inner">
+    <a href="#part1" data-part="1">This Summer</a>
+    <a href="#part2" data-part="2">The Full Role</a>
   </div>
 </nav>
 
 <div class="page">
 
-<!-- Table of Contents -->
-<section>
-  <div class="section-header">
-    <span class="section-title">Contents</span>
-  </div>
-  <table>
-    <tbody>
-      <tr><td><strong>01</strong></td><td><a href="#s01" style="color:var(--color-blue); text-decoration:none;">Why This Role Exists</a></td></tr>
-      <tr><td><strong>02</strong></td><td><a href="#s02" style="color:var(--color-blue); text-decoration:none;">Start With an Intern This Summer</a></td></tr>
-      <tr><td><strong>03</strong></td><td><a href="#s03" style="color:var(--color-blue); text-decoration:none;">Where It Fits</a></td></tr>
-      <tr><td><strong>04</strong></td><td><a href="#s04" style="color:var(--color-blue); text-decoration:none;">Roles &amp; Responsibilities</a></td></tr>
-      <tr><td><strong>05</strong></td><td><a href="#s05" style="color:var(--color-blue); text-decoration:none;">Operating Rhythm &amp; Agency SLAs</a></td></tr>
-      <tr><td><strong>06</strong></td><td><a href="#s06" style="color:var(--color-blue); text-decoration:none;">Decision Authority &amp; Budget Tiers</a></td></tr>
-      <tr><td><strong>07</strong></td><td><a href="#s07" style="color:var(--color-blue); text-decoration:none;">Qualifications</a></td></tr>
-      <tr><td><strong>08</strong></td><td><a href="#s08" style="color:var(--color-blue); text-decoration:none;">Market Compensation Data</a></td></tr>
-      <tr><td><strong>09</strong></td><td><a href="#s09" style="color:var(--color-blue); text-decoration:none;">Compensation Recommendation</a></td></tr>
-      <tr><td><strong>10</strong></td><td><a href="#s10" style="color:var(--color-blue); text-decoration:none;">90-Day Success Metrics</a></td></tr>
-      <tr><td><strong>11</strong></td><td><a href="#s11" style="color:var(--color-blue); text-decoration:none;">Growth Path</a></td></tr>
-      <tr><td><strong>12</strong></td><td><a href="#s12" style="color:var(--color-blue); text-decoration:none;">Job Description — Ready to Post</a></td></tr>
-      <tr><td><strong>13</strong></td><td><a href="#s13" style="color:var(--color-blue); text-decoration:none;">Data Sources</a></td></tr>
-    </tbody>
-  </table>
-</section>
+<!-- Framing -->
+<div style="padding: 40px 0 0; font-size: 14px; color: var(--text-secondary); line-height: 1.7; max-width: 640px;">
+  <p>This package is in two parts. <strong style="color: var(--color-white);">Part one</strong> is the immediate opportunity — a summer intern who gives LEGC a working prototype of the marketing coordinator role at minimal cost. <strong style="color: var(--color-white);">Part two</strong> is the full roadmap — the coordinator position itself, fully scoped with compensation, responsibilities, and a ready-to-post job description.</p>
+</div>
+
+<!-- Part 1 -->
+<div class="part-divider" id="part1">
+  <div class="part-label">Part One</div>
+  <div class="part-title">This Summer</div>
+  <div class="part-desc">A low-cost test run that gives LEGC real data on what the full-time role requires.</div>
+  <div class="part-divider-line"></div>
+</div>
 
 <!-- 01. Why This Role -->
 <section id="s01">
@@ -791,6 +750,14 @@
     <p><strong>Best case:</strong> the intern is strong enough to convert into the full-time coordinator role after graduation. You've already trained them, they know the business, and the agency relationship is already established. <strong>Either way:</strong> LEGC enters the coordinator hiring process in the fall with a much clearer picture of what the role actually requires day-to-day.</p>
   </div>
 </section>
+
+<!-- Part 2 -->
+<div class="part-divider" id="part2">
+  <div class="part-label">Part Two</div>
+  <div class="part-title">The Full Role</div>
+  <div class="part-desc">The complete marketing coordinator position — organization, responsibilities, compensation, and a ready-to-post job description.</div>
+  <div class="part-divider-line"></div>
+</div>
 
 <!-- 03. Where It Fits -->
 <section id="s03">
@@ -1405,35 +1372,16 @@
 
 <script>
 (function() {
-  var level2 = document.getElementById('navLevel2');
-  var l2Links = level2.querySelectorAll('a');
-  var l1Links = document.querySelectorAll('.nav-level-1 a');
-  var sections = [];
-  l2Links.forEach(function(a) {
-    var id = a.getAttribute('href').slice(1);
-    var el = document.getElementById(id);
-    if (el) sections.push({ id: id, el: el, link: a, group: a.dataset.group });
-  });
+  var navLinks = document.querySelectorAll('.section-nav a');
+  var part1 = document.getElementById('part1');
+  var part2 = document.getElementById('part2');
   function update() {
-    var scrollY = window.scrollY + 100;
-    var current = '';
-    var currentGroup = '';
-    sections.forEach(function(s) {
-      if (s.el.offsetTop <= scrollY) { current = s.id; currentGroup = s.group; }
+    var scrollY = window.scrollY + 80;
+    var activePart = '1';
+    if (part2 && part2.offsetTop <= scrollY) activePart = '2';
+    navLinks.forEach(function(a) {
+      a.classList.toggle('active', a.dataset.part === activePart);
     });
-    l2Links.forEach(function(a) {
-      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
-    });
-    l1Links.forEach(function(a) {
-      a.classList.toggle('active', a.dataset.group === currentGroup);
-    });
-    var activeLink = level2.querySelector('a.active');
-    if (activeLink) {
-      var linkLeft = activeLink.offsetLeft - level2.offsetLeft;
-      var linkCenter = linkLeft + activeLink.offsetWidth / 2;
-      var navCenter = level2.clientWidth / 2;
-      level2.scrollTo({ left: linkCenter - navCenter, behavior: 'smooth' });
-    }
   }
   window.addEventListener('scroll', update, { passive: true });
   update();
