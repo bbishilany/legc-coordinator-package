@@ -63,7 +63,7 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    z-index: 100;
+    z-index: 200;
   }
   .brand-mark-text {
     font-family: var(--font-display);
@@ -85,6 +85,25 @@
     background: var(--dark-surface);
     padding: 100px 40px 72px;
     border-bottom: 3px solid var(--color-blue);
+    position: relative;
+    overflow: hidden;
+  }
+  .cover-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+  }
+  .cover-glow {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 50% at 50% -20%, rgba(46,117,247,0.12) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 40% at 80% 100%, rgba(46,117,247,0.06) 0%, transparent 50%);
+    pointer-events: none;
   }
   .cover .page { padding: 0; }
   .cover-label {
@@ -121,10 +140,57 @@
     letter-spacing: 0.5px;
   }
 
+  /* Sticky nav */
+  html { scroll-behavior: smooth; }
+  .section-nav {
+    position: sticky;
+    top: 0;
+    z-index: 150;
+    background: rgba(11,26,51,0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(46,117,247,0.1);
+  }
+  .section-nav-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    display: flex;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .section-nav-inner::-webkit-scrollbar { display: none; }
+  .section-nav a {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 12px 14px;
+    text-decoration: none;
+    color: var(--text-muted);
+    font-family: var(--font-display);
+    font-size: 10px;
+    font-weight: 700;
+    white-space: nowrap;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .section-nav a:hover { color: var(--text-primary); }
+  .section-nav a.active {
+    color: var(--color-blue);
+    border-bottom-color: var(--color-blue);
+  }
+  .section-nav a .nav-num {
+    color: var(--color-blue);
+    font-weight: 800;
+  }
+
   /* Sections */
   section {
     padding: 52px 0;
     border-bottom: 1px solid rgba(46,117,247,0.1);
+    scroll-margin-top: 48px;
   }
   section:last-child { border-bottom: none; }
 
@@ -555,7 +621,9 @@
 
 <!-- Cover -->
 <div class="cover">
-  <div class="page">
+  <div class="cover-grid"></div>
+  <div class="cover-glow"></div>
+  <div class="page" style="position:relative; z-index:1;">
     <div class="cover-label">Role Definition &amp; Compensation Package</div>
     <h1>Marketing Coordinator</h1>
     <div class="cover-sub">An Ohio-based liaison role connecting Lake Erie Golf Cars and Versatile with their agency partner — coordinating events locally, managing brand presence, and keeping the marketing engine fed across both businesses.</div>
@@ -566,6 +634,25 @@
     </div>
   </div>
 </div>
+
+<!-- Sticky section nav -->
+<nav class="section-nav" id="sectionNav">
+  <div class="section-nav-inner">
+    <a href="#s01"><span class="nav-num">01</span> Why</a>
+    <a href="#s02"><span class="nav-num">02</span> Intern</a>
+    <a href="#s03"><span class="nav-num">03</span> Org</a>
+    <a href="#s04"><span class="nav-num">04</span> Roles</a>
+    <a href="#s05"><span class="nav-num">05</span> Rhythm</a>
+    <a href="#s06"><span class="nav-num">06</span> Authority</a>
+    <a href="#s07"><span class="nav-num">07</span> Quals</a>
+    <a href="#s08"><span class="nav-num">08</span> Market</a>
+    <a href="#s09"><span class="nav-num">09</span> Comp</a>
+    <a href="#s10"><span class="nav-num">10</span> KPIs</a>
+    <a href="#s11"><span class="nav-num">11</span> Growth</a>
+    <a href="#s12"><span class="nav-num">12</span> JD</a>
+    <a href="#s13"><span class="nav-num">13</span> Sources</a>
+  </div>
+</nav>
 
 <div class="page">
 
@@ -1269,5 +1356,38 @@
 </div>
 <div class="footer-strip" style="height:12px; background:#2E75F7;"></div>
 
+<script>
+(function() {
+  const nav = document.getElementById('sectionNav');
+  const links = nav.querySelectorAll('a');
+  const sections = [];
+  links.forEach(function(a) {
+    var id = a.getAttribute('href').slice(1);
+    var el = document.getElementById(id);
+    if (el) sections.push({ id: id, el: el, link: a });
+  });
+  function update() {
+    var scrollY = window.scrollY + 80;
+    var current = '';
+    sections.forEach(function(s) {
+      if (s.el.offsetTop <= scrollY) current = s.id;
+    });
+    links.forEach(function(a) {
+      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+    });
+    // scroll active link into view in nav
+    var activeLink = nav.querySelector('a.active');
+    if (activeLink) {
+      var navInner = nav.querySelector('.section-nav-inner');
+      var linkLeft = activeLink.offsetLeft - navInner.offsetLeft;
+      var linkCenter = linkLeft + activeLink.offsetWidth / 2;
+      var navCenter = navInner.clientWidth / 2;
+      navInner.scrollTo({ left: linkCenter - navCenter, behavior: 'smooth' });
+    }
+  }
+  window.addEventListener('scroll', update, { passive: true });
+  update();
+})();
+</script>
 </body>
 </html>
